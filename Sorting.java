@@ -83,7 +83,7 @@ public class Sorting  {
     }
 
   
-public class QuickSortUtil {
+
 
     public void quickSort(int[] arr, int low, int high) {
         if (low < high) {
@@ -115,7 +115,33 @@ public class QuickSortUtil {
             arr[j] = temp;
         }
     }
+
+
+public void countingSort(int[] arr) {
+    if (arr.length == 0)
+        return;
+
+    int max = arr[0];
+    for (int i = 1; i < arr.length; i++) {
+        if (arr[i] > max)
+            max = arr[i];
+    }
+
+    int[] count = new int[max + 1];
+
+    for (int i = 0; i < arr.length; i++) {
+        count[arr[i]]++;
+    }
+
+    int index = 0;
+    for (int i = 0; i < count.length; i++) {
+        while (count[i] > 0) {
+            arr[index++] = i;
+            count[i]--;
+        }
+    }
 }
+
 
     
     public static void main(String[] args) {
@@ -145,6 +171,11 @@ public class QuickSortUtil {
         arr = new int[]{64, 25, 12, 22, 11};
         sorting.quickSort(arr, 0, arr.length - 1); 
         System.out.println("Quick Sort: " + Arrays.toString(arr));
+
+        arr = new int[]{4, 2, 2, 8, 3, 3, 1};
+sorting.countingSort(arr);
+System.out.println("Counting Sort: " + Arrays.toString(arr));
+
     }
 }
    
