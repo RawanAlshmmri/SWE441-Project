@@ -62,7 +62,7 @@ public class Sorting  {
         int i = 0, j = 0, k = left;
 
         while (i < leftArray.length && j < rightArray.length) {
-            if (leftArray[i] < rightArray[j]) {
+            if (leftArray[i] <= rightArray[j]) {
                 arr[k++] = leftArray[i++];
             } else {
                 arr[k++] = rightArray[j++];
