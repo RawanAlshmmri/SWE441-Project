@@ -49,33 +49,37 @@ public class Sorting  {
     public void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
-            mergeSort(arr, left, mid);
-            mergeSort(arr, mid + 1, right);
-            merge(arr, left, mid, right);
+            mergeSort(arr, left, mid);  
+            mergeSort(arr, mid + 1, right); 
+            merge(arr, left, mid, right);  
         }
     }
-
+    
     public void merge(int[] arr, int left, int mid, int right) {
-        int[] leftArray = Arrays.copyOfRange(arr, left, mid + 1);
-        int[] rightArray = Arrays.copyOfRange(arr, mid + 1, right + 1);
-
-        int i = 0, j = 0, k = left;
-
-        while (i < leftArray.length && j < rightArray.length) {
-            if (leftArray[i] <= rightArray[j]) {
-                arr[k++] = leftArray[i++];
+        
+        int i = left, j = mid + 1, k = 0;
+        int[] temp = new int[right - left + 1];  
+    
+        
+        while (i <= mid && j <= right) {
+            if (arr[i] <= arr[j]) {
+                temp[k++] = arr[i++];
             } else {
-                arr[k++] = rightArray[j++];
+                temp[k++] = arr[j++];
             }
         }
-
-        while (i < leftArray.length) {
-            arr[k++] = leftArray[i++];
+    
+      
+        while (i <= mid) {
+            temp[k++] = arr[i++];
         }
-
-        while (j < rightArray.length) {
-            arr[k++] = rightArray[j++];
+    
+       
+        while (j <= right) {
+            temp[k++] = arr[j++];
         }
+    
+        System.arraycopy(temp, 0, arr, left, temp.length);
     }
 
     
