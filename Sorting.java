@@ -141,6 +141,15 @@ public void countingSort(int[] arr) {
         }
     }
 }
+public void reverseSort(int[] arr) {
+    Arrays.sort(arr); 
+    for (int i = 0; i < arr.length / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[arr.length - 1 - i];
+        arr[arr.length - 1 - i] = temp;
+    }
+}
+
 
 
     
@@ -175,6 +184,11 @@ public void countingSort(int[] arr) {
         arr = new int[]{4, 2, 2, 8, 3, 3, 1};
 sorting.countingSort(arr);
 System.out.println("Counting Sort: " + Arrays.toString(arr));
+
+arr = new int[]{64, 25, 12, 22, 11};
+sorting.reverseSort(arr);
+System.out.println("Reverse Sort: " + Arrays.toString(arr));
+
 
     }
 }
