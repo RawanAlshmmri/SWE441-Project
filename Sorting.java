@@ -4,19 +4,21 @@ import java.util.Arrays;
 public class Sorting  {
    
 
-    public void selectionSort(int[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {
-            int minIdx = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < arr[minIdx]) {
-                    minIdx = j;
+    public void selectionSort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[minIndex]) {
+                    minIndex = j;
                 }
             }
-            int temp = arr[i];
-            arr[i] = arr[minIdx];
-            arr[minIdx] = temp;
+            if (minIndex != i) { 
+                int temp = array[i];
+                array[i] = array[minIndex];
+                array[minIndex] = temp;
+            }
         }
-    }
+    }    
 
     public void insertionSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
