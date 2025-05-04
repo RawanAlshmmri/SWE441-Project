@@ -162,44 +162,37 @@ public void reverseSort(int[] arr) {
 
 
     
-    public static void main(String[] args) {
-        
-        Sorting sorting = new Sorting();
-       
-        
-        int[] arr = {64, 25, 12, 22, 11};
-        sorting.selectionSort(arr);
-        System.out.println("Selection Sort: " + Arrays.toString(arr));
-        
-   
-        arr = new int[]{64, 25, 12, 22, 11};
-        sorting.insertionSort(arr);
-        System.out.println("Insertion Sort: " + Arrays.toString(arr));
+public static void main(String[] args) {
+    Sorting sorting = new Sorting();
 
-     
-        arr = new int[]{64, 25, 12, 22, 11};
-        sorting.bubbleSort(arr);
-        System.out.println("Bubble Sort: " + Arrays.toString(arr));
+    // Example array to sort
+    int[] arr = {64, 25, 12, 22, 11};
 
-       
-        arr = new int[]{64, 25, 12, 22, 11};
-        sorting.mergeSort(arr, 0, arr.length - 1);
-        System.out.println("Merge Sort: " + Arrays.toString(arr));
+    // Call selectionSort
+    int[] arrForSelection = Arrays.copyOf(arr, arr.length);
+    sorting.selectionSort(arrForSelection);
+    System.out.println("Selection Sort: " + Arrays.toString(arrForSelection));
 
-        arr = new int[]{64, 25, 12, 22, 11};
-        sorting.quickSort(arr, 0, arr.length - 1); 
-        System.out.println("Quick Sort: " + Arrays.toString(arr));
+    // Call insertionSort
+    int[] arrForInsertion = Arrays.copyOf(arr, arr.length);
+    sorting.insertionSort(arrForInsertion);
+    System.out.println("Insertion Sort: " + Arrays.toString(arrForInsertion));
 
-        arr = new int[]{4, 2, 2, 8, 3, 3, 1};
-sorting.countingSort(arr);
-System.out.println("Counting Sort: " + Arrays.toString(arr));
+    // Call bubbleSort
+    int[] arrForBubble = Arrays.copyOf(arr, arr.length);
+    sorting.bubbleSort(arrForBubble);
+    System.out.println("Bubble Sort: " + Arrays.toString(arrForBubble));
 
-arr = new int[]{64, 25, 12, 22, 11};
-sorting.reverseSort(arr);
-System.out.println("Reverse Sort: " + Arrays.toString(arr));
+    // Call mergeSort
+    int[] arrForMerge = Arrays.copyOf(arr, arr.length);
+    sorting.mergeSort(arrForMerge, 0, arrForMerge.length - 1);
+    System.out.println("Merge Sort: " + Arrays.toString(arrForMerge));
 
-
-    }
+    // Call quickSort
+    int[] arrForQuick = Arrays.copyOf(arr, arr.length);
+    sorting.quickSort(arrForQuick, 0, arrForQuick.length - 1);
+    System.out.println("Quick Sort: " + Arrays.toString(arrForQuick));
+}
 }
    
 
