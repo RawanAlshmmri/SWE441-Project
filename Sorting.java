@@ -37,6 +37,9 @@ public class Sorting  {
     }
 
     public void bubbleSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return; 
+        }
         boolean swapped;
         for (int i = 0; i < arr.length - 1; i++) {
             swapped = false;
@@ -48,10 +51,10 @@ public class Sorting  {
                     swapped = true;
                 }
             }
-            if (!swapped) break;
+            if (!swapped) break; 
         }
     }
-}
+
     public void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
