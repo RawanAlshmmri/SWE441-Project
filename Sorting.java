@@ -5,6 +5,10 @@ public class Sorting  {
    
 
     public void selectionSort(int[] array) {
+        if (array == null || array.length == 0) {
+            return;
+        }
+    
         for (int i = 0; i < array.length - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < array.length; j++) {
@@ -18,8 +22,8 @@ public class Sorting  {
                 array[minIndex] = temp;
             }
         }
-    }    
-
+    }
+    
     public void insertionSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int key = arr[i];
@@ -47,7 +51,7 @@ public class Sorting  {
             if (!swapped) break;
         }
     }
-
+}
     public void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
